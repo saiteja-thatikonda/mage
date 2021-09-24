@@ -2,9 +2,9 @@
 /**
  * Webkul Software.
  *
- * @category  Webkul
+ * @category  teja
  * @package   Webkul_Hello
- * @author    Webkul
+ * @author    tejas
  * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
  * @license   https://store.webkul.com/license.html
  */
