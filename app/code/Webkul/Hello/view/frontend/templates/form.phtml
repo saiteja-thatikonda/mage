@@ -1,0 +1,125 @@
+<div id="custom-form">
+ 
+   <form class="form contact"
+ 
+         action="<?php echo $this->getUrl('extension/index/save', ['_secure' => true]);?>"
+ 
+         id="custom-form"
+ 
+         method="post"
+ 
+         data-hasrequired="<?php  echo __('* Required Fields') ?>"
+ 
+         data-mage-init='{"validation":{}}'>
+ 
+       <input type="hidden" name="cproduct_id" id="cproduct_id" value="0" />
+ 
+       <fieldset class="fieldset">
+ 
+           <legend class="legend"><span><?php  echo __("Query Detail") ?></span></legend><br />
+ 
+           <div class="field name required">
+ 
+               <label class="label" for="name"><span><?php  echo __('Name') ?></span></label>
+ 
+               <div class="control">
+ 
+                   <input name="name" id="name" title="<?php  echo __('Name') ?>" class="input-text" type="text" data-validate="{required:true}"/>
+ 
+               </div>
+ 
+           </div>
+ 
+           <div class="field email required">
+ 
+               <label class="label" for="email"><span><?php  echo __('Email') ?></span></label>
+ 
+               <div class="control">
+ 
+                   <input name="email" id="email" title="<?php  echo __('Email') ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+ 
+               </div>
+ 
+           </div>
+ 
+           <div class="field country required">
+ 
+               <label class="label" for="country"><span><?php echo __('Country') ?></span></label>
+ 
+               <div class="control">
+ 
+                   <select name="country" id="country" data-validate="{required:true, 'validate-select':true}">
+ 
+                       <option value=""><?php echo __('Please Select')?></option>
+ 
+                       <?php
+ 
+                       $countries = $block->getCountries();
+ 
+                       foreach ( $countries as $countryKey => $country )
+ 
+                       {
+ 
+                           if($country['value'] != '')
+ 
+                           {?>
+ 
+                               <option value="<?php echo $country['value'];?>"><?php echo $country['label'];?></option>
+ 
+                           <?php }
+ 
+                       }
+ 
+                       ?>
+ 
+                   </select>
+ 
+               </div>
+ 
+           </div>
+ 
+           <div class="field telephone">
+ 
+               <label class="label" for="telephone"><span><?php  echo __('Phone Number') ?></span></label>
+ 
+               <div class="control">
+ 
+                   <input name="telephone" id="telephone" title="<?php  echo __('Phone Number') ?>" value="" class="input-text" type="text" />
+ 
+               </div>
+ 
+           </div>
+ 
+           <div class="field comment required">
+ 
+               <label class="label" for="comment"><span><?php  echo __('What’s on your mind?') ?></span></label>
+ 
+               <div class="control">
+ 
+                   <textarea name="comment" id="comment" title="<?php  echo __('What’s on your mind?') ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+ 
+               </div>
+ 
+           </div>
+ 
+       </fieldset>
+ 
+       <div class="actions-toolbar">
+ 
+           <div class="primary">
+ 
+               <input type="hidden" name="hideit" id="hideit" value="" />
+ 
+               <button type="submit" title="<?php  echo __('Submit') ?>" class="action submit primary" id="custom_btn">
+ 
+                   <span><?php  echo __('Submit') ?></span>
+ 
+               </button>
+ 
+           </div>
+ 
+       </div>
+ 
+   </form>
+ 
+</div>
