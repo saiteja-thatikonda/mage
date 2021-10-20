@@ -1,9 +1,9 @@
 <?php
 /**
  * Webkul Grid List Controller.
- * @category  Webkul
+ * @category  sai
  * @package   Webkul_Grid
- * @author    Webkul
+ * @author   sai
  * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
  * @license   https://store.webkul.com/license.html
  */

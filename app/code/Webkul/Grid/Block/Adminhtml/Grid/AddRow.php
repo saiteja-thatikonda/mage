@@ -2,7 +2,7 @@
     /**
      * Webkul_Grid Add Row Form Block.
      *
-     * @category    Webkul
+     * @category   sai
      *
      * @author      Webkul Software Private Limited
      */
@@ -26,7 +26,7 @@ class AddRow extends \Magento\Backend\Block\Widget\Form\Container
         \Magento\Backend\Block\Widget\Context $context,
         \Magento\Framework\Registry $registry,
         array $data = []
-    ) 
+    )
     {
         $this->_coreRegistry = $registry;
         parent::__construct($context, $data);
