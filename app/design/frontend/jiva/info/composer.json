@@ -1,5 +1,5 @@
 {
-    "name" : "Codextblog/luma_custom",
+    "name" : "jiva/info",
     "description" : "Custom Magento 2 Theme from luma theme",
     "require" : {
         "php" : "~5.5.0|~5.6.0|~7.0.0",
