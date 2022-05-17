@@ -2,11 +2,56 @@
 
 namespace Efi\BulkOrder\Model;
 
-class OrderManagement
-{
-    public function _construct(
+use Magento\Catalog\Api\ProductRepositoryInterface;
+use Magento\Customer\Model\CustomerFactory;
+use Magento\Quote\Model\QuoteFactory;
+use Magento\Quote\Model\QuoteManagement;
+use Magento\Sales\Model\Order\Email\Sender\OrderSender;
+use Magento\Store\Model\StoreManagerInterface;
 
-    {
+class OrderManagement
+
+{
+    /**
+     * @var StoreManagerInterface
+     */
+    protected $storeManager;
+    /**
+     * @var CustomerFactory
+     */
+    protected $customerFactory;
+    /**
+     * @var   ProductRepositoryInterface
+     */
+    protected $productRepository;
+    /**
+     * @var CustomerFactory
+     */
+    protected $customerRepository;
+    /**
+     * @var QuoteFactory
+     */
+    protected $quote;
+    /**
+     * @var QuoteManagement
+     */
+    protected $quoteManagement;
+    /**
+     * @var OrderSender
+     */
+    protected $orderSender;
+    /**
+     * @param StoreManagerInterface $storeManager
+     * @param CustomerFactory $customerFactory
+     * @param ProductRepositoryInterface $productRepository
+     * @param \Magento\Customer\Api\CustomerRepositoryInterface $customerRepository
+     * @param QuoteFactory $quote
+     * @param QuoteManagement $quoteManagement
+     * @param OrderSender $orderSender
+     */
+    public function __construct(
+
+
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Customer\Model\CustomerFactory $customerFactory,
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
@@ -23,7 +68,10 @@ class OrderManagement
         $this->quoteManagement = $quoteManagement;
         $this->orderSender = $orderSender;
     }
-    }
+
+    /**
+     * @return array
+     */
     public function orderInfo()
     {
         $orderInfo = [
@@ -53,6 +101,12 @@ class OrderManagement
         return $orderInfo;
     }
 
+    /**
+     * @param $orderInfo
+     * @return array
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function createOrder($orderInfo)
     {
         $store = $this->storeManager->getStore();

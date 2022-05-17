@@ -17,12 +17,12 @@ class BulkOrders extends \Magento\Framework\App\Action\Action
     {
         $this->resultPageFactory = $resultPageFactory;
         $this->orderManagementFactory = $orderManagementFactory
-        return parent::__construct($context);
+        parent::__construct($context);
     }
 
     public function execute()
     {
-        $orderManagement = $this->orderManagementFactory->create();
-        $orderManagement->createOrder($orderInfo);
+        $orderInfo=$this->orderManagementFactory->orderInfo();
+        $this->orderManagementFactory->createOrder($orderInfo);
     }
 }
