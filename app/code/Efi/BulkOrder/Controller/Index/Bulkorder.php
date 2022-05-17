@@ -80,7 +80,7 @@ class BulkOrder  extends \Magento\Framework\App\Action\Action {
                     
                     [
                         'product_id' => '1',
-                        'qty' => 10
+                        'qty' => 1
                     ],
                     
                     [
