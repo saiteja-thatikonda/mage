@@ -15,30 +15,37 @@ class OrderManagement
      * @var StoreManagerInterface
      */
     protected $storeManager;
+
     /**
      * @var CustomerFactory
      */
     protected $customerFactory;
+
     /**
      * @var   ProductRepositoryInterface
      */
     protected $productRepository;
+
     /**
      * @var CustomerFactory
      */
     protected $customerRepository;
+
     /**
      * @var QuoteFactory
      */
     protected $quote;
+
     /**
      * @var QuoteManagement
      */
     protected $quoteManagement;
+
     /**
      * @var OrderSender
      */
     protected $orderSender;
+
     /**
      * @param StoreManagerInterface $storeManager
      * @param CustomerFactory $customerFactory
