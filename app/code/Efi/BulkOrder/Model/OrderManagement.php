@@ -10,7 +10,6 @@ use Magento\Sales\Model\Order\Email\Sender\OrderSender;
 use Magento\Store\Model\StoreManagerInterface;
 
 class OrderManagement
-
 {
     /**
      * @var StoreManagerInterface
@@ -50,8 +49,6 @@ class OrderManagement
      * @param OrderSender $orderSender
      */
     public function __construct(
-
-
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Customer\Model\CustomerFactory $customerFactory,
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
@@ -110,8 +107,9 @@ class OrderManagement
     public function createOrder($orderInfo)
     {
         $store = $this->storeManager->getStore();
-        $storeId = $store->getStoreId();
+        $storeId = 1;
         $websiteId = $this->storeManager->getStore()->getWebsiteId();
+        $websiteId =1;
         $customer = $this->customerFactory->create();
         $customer->setWebsiteId($websiteId);
         $customer->loadByEmail($orderInfo['email']);
